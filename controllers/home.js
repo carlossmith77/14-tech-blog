@@ -2,12 +2,18 @@ const router = require('express').Router();
 const sequelize = require('../config/config');
 const {
     User,
-    Post,
+    
     Comment
 } = require('../models');
-
-
+const Post = require("../models/post");
+router.get("/test", async (req, res) => {
+    console.log ("test", Post);
+   
+    const data = await Post.findAll({});
+    res.send(data);
+})
 router.get('/', (req, res) => {
+    
     Post.findAll({
             attributes: [
                 'id',
