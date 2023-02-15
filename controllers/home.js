@@ -2,10 +2,10 @@ const router = require('express').Router();
 const sequelize = require('../config/config');
 const {
     User,
-    
+    Post,  
     Comment
 } = require('../models');
-const Post = require("../models/post");
+// const Post = require("../models/post");
 router.get("/test", async (req, res) => {
     console.log ("test", Post);
    
